@@ -19,6 +19,18 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) setOpen(false); });
   }
 
+  // Botón para volver arriba (solo en teléfono, como en Wix): sale al bajar y se va solo a los 3 segundos.
+  const top = $(".to-top");
+  if (top) {
+    let t;
+    addEventListener("scroll", () => {
+      top.classList.toggle("show", scrollY > 200);
+      clearTimeout(t);
+      t = setTimeout(() => top.classList.remove("show"), 3000);
+    }, { passive: true });
+    top.addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
+  }
+
   // Submenús (Our Approach, Admissions)
   $$(".sub-btn").forEach((btn) => {
     btn.addEventListener("click", () => {

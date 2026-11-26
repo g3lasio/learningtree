@@ -124,7 +124,6 @@ ${description ? `<meta name="description" content="${esc(description)}">` : "<!-
     <ul>
       ${mobileItems.map(([k, l]) => `<li><a href="${href(c.lang, k)}"${current === k ? ' aria-current="page"' : ""}>${esc(l)}</a></li>`).join("\n      ")}
     </ul>
-    ${site.ENROLLMENT_URL ? `<a class="mobile-start" href="${esc(site.ENROLLMENT_URL)}">${esc(u.startEnrollment)}</a>` : ""}
   </nav>
 </div>
 <main id="main">
@@ -132,6 +131,7 @@ ${body}
 </main>
 ${footer(c)}
 <a class="float-tour" href="${site.bookTourUrl}">${esc(u.floatingBookTour)}</a>
+<button class="to-top" type="button" aria-label="${c.lang === "es" ? "Volver arriba" : "Back to top"}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
 ${popup(c)}
 <nav class="action-bar" aria-label="${c.lang === "es" ? "Acciones rápidas" : "Quick actions"}">
   <a href="tel:+12094992779" aria-label="Phone">${icon("phone")}</a>
