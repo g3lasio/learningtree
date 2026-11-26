@@ -76,6 +76,8 @@ function layout(c, { title, description, path, body, current }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Tablet: Wix muestra la versión de computadora en todas las tabletas. Si el lado corto de la pantalla mide 600 o más
+   y la pantalla es más angosta que 1265, se muestra la página de computadora completa (1265 de ancho) ajustada a la pantalla. */(function(){var w=screen.width,h=screen.height,s=Math.min(w,h);if(s>=600&&w<1265&&matchMedia("(pointer: coarse)").matches){document.querySelector('meta[name=viewport]').setAttribute("content","width=1265")}})()</script>
 <title>${esc(title)}</title>
 ${description ? `<meta name="description" content="${esc(description)}">` : "<!-- TODO: meta description (copiar de Wix > SEO) -->"}
 <meta property="og:title" content="${esc(title)}">
