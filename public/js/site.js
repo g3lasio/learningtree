@@ -114,6 +114,27 @@
     d.addEventListener("blur", () => { if (!d.value) d.type = "text"; });
   });
 
+  // Galerías del portafolio: como en Wix, cada foto va a la columna que va más corta.
+  const pfGrid = $(".pf-grid");
+  if (pfGrid) {
+    const cols = $$(".pf-col", pfGrid);
+    const items = $$(".pf-item", pfGrid).sort((a, b) => parseInt(a.style.order, 10) - parseInt(b.style.order, 10));
+    const place = () => {
+      if (cols.length !== 2 || getComputedStyle(cols[0]).display === "contents") return;
+      const h = [0, 0];
+      items.forEach((it) => {
+        const im = $("img", it);
+        const r = im && im.naturalWidth ? im.naturalHeight / im.naturalWidth : 16 / 9;
+        const k = h[1] < h[0] ? 1 : 0;
+        cols[k].appendChild(it);
+        h[k] += r + 0.07;
+      });
+    };
+    $$("img", pfGrid).forEach((im) => { if (!im.complete) im.addEventListener("load", place); });
+    window.addEventListener("resize", place);
+    place();
+  }
+
   // Formulario de contacto: revisa los obligatorios y lo manda sin salir de la página.
   const form = $(".contact-form");
   if (form) {

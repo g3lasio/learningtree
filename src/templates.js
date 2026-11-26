@@ -361,10 +361,12 @@ function portfolioPage(c, i) {
   const loop = c.ui.pfLoop !== false;
   const showPrev = loop || i > 0;
   const showNext = loop || i < list.length - 1;
-  const item = (it) =>
+  const item = (it, n) =>
     it.video
-      ? `<div class="pf-item is-video"><video controls preload="none" playsinline poster="/img/${it.video}f000.jpg"><source src="/media/${it.video}.mp4" type="video/mp4"></video></div>`
-      : `<div class="pf-item">${image(it)}</div>`;
+      ? `<div class="pf-item is-video" style="order:${n}"><video controls preload="none" playsinline poster="/img/${it.video}f000.jpg"><source src="/media/${it.video}.mp4" type="video/mp4"></video></div>`
+      : `<div class="pf-item" style="order:${n}">${image(it).replace(' loading="lazy"', ' loading="eager"')}</div>`;
+  // Como en Wix: dos columnas que se apilan solas (cada foto con su forma), la 1.ª a la izquierda, la 2.ª a la derecha, etc.
+  const col = (side) => p.items.map((it, n) => (n % 2 === side ? item(it, n) : "")).filter(Boolean).join("\n      ");
   const body = `
 <section class="pf">
   <div class="pf-head">
@@ -373,7 +375,12 @@ function portfolioPage(c, i) {
   </div>
   <div class="pf-cover">${image(p.cover, "", ' loading="eager"')}</div>
   <div class="pf-grid">
-    ${p.items.map(item).join("\n    ")}
+    <div class="pf-col">
+      ${col(0)}
+    </div>
+    <div class="pf-col">
+      ${col(1)}
+    </div>
   </div>
   <div class="pf-nav">
     ${showPrev ? `<a class="pf-prev" href="${portfolioHref(c.lang, prev.slug)}">${chev("left")} ${esc(c.ui.pfPrevious || c.ui.previous)}</a>` : "<span></span>"}
