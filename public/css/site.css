@@ -52,8 +52,8 @@ ul, ol { margin: 0; }
 
 /* ---------- Encabezado (fijo, como en Wix) ---------- */
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 40; height: var(--hh); background: var(--bg); }
-.logo { position: absolute; left: calc(89 * var(--x)); top: 16px; }
-.logo img { width: 105px; height: 105px; object-fit: contain; }
+.logo { position: absolute; left: calc(77 * var(--x)); top: 6px; }
+.logo img { width: 129px; height: 129px; object-fit: contain; } /* el círculo del logo mide 103 px, como en Wix */
 .lang { position: absolute; left: calc(222 * var(--x)); top: 62px; }
 .lang-btn { background: none; border: 0; display: flex; align-items: center; gap: calc(32 * var(--x)); cursor: pointer; padding: 0; color: var(--nav); }
 .lang-btn svg { width: 13px; height: 8px; }
