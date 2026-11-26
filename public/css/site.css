@@ -694,3 +694,8 @@ main { padding-top: var(--hh); }
   .p-card .p-text { padding-right: calc(4 * var(--u)); }
   .slide blockquote { font-size: calc(15.2 * var(--u)); }
 }
+@media (max-width:999px) {
+  /* Español: "Dedicados al crecimiento" no cabe en una línea; se parte en dos sin salirse. */
+  html[lang="es"] .a-mission-text h2 { white-space: normal; margin: 0; }
+  html[lang="es"] .a-member-name { white-space: normal; }
+}
