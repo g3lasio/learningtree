@@ -34,10 +34,17 @@ const SECURITY_HEADERS = {
   "X-Frame-Options": "SAMEORIGIN",
 };
 
+// Leo AI: las páginas traen el código del chat con __LEO_WIDGET_TOKEN__ en lugar del token.
+// Aquí se pone el token real (variable LEO_WIDGET_TOKEN). Sin token, se quita el bloque entero.
+function withLeo(html) {
+  if (LEO_WIDGET_TOKEN) return html.split("__LEO_WIDGET_TOKEN__").join(LEO_WIDGET_TOKEN.replace(/[^A-Za-z0-9_-]/g, ""));
+  return html.replace(/<!-- Leo AI[\s\S]*?<!-- \/Leo AI -->/, "");
+}
+
 function notFound(res, lang) {
   const file = path.join(PUBLIC_DIR, lang === "es" ? "es/404.html" : "404.html");
   res.writeHead(404, { "Content-Type": "text/html; charset=utf-8", ...SECURITY_HEADERS });
-  fs.createReadStream(file).on("error", () => res.end("Not found")).pipe(res);
+  fs.readFile(file, "utf8", (err, html) => res.end(err ? "Not found" : withLeo(html)));
 }
 
 function sendFile(res, filePath, lang) {
@@ -49,7 +56,7 @@ function sendFile(res, filePath, lang) {
       "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=86400",
       ...SECURITY_HEADERS,
     });
-    res.end(data);
+    res.end(ext === ".html" ? withLeo(data.toString("utf8")) : data);
   });
 }
 

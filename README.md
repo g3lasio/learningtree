@@ -33,8 +33,13 @@ Se manda: token, name, email, phone y message. Edad del niño, fecha de inicio y
 Pendiente: comparar los nombres de campo con el payload de ejemplo de Chuch (función `toLeadPrime` en `server.js`).
 
 ## Leo AI
-Pega el código del embed kit de LeadPrime en `src/partials/leo-ai.html` y corre `npm run build`.
-Se pone solo en todas las páginas. El dominio principal no cambia, así que Leo sigue igual.
+El chat de Leo ya está en todas las páginas (inglés y español). El código está en `src/partials/leo-ai.html`
+y es el mismo formato del Embed Kit de LeadPrime: `https://leadprime.chyrris.com/api/widget/embed.js` con `data-token`.
+El token sale de la misma variable `LEO_WIDGET_TOKEN` que usa el formulario: una sola variable prende las dos cosas.
+Sin esa variable la burbuja de Leo NO aparece (el servidor quita el bloque para que no salga un chat roto).
+Dónde sacar el token (empieza con `lp_wid_`): en LeadPrime con la cuenta de Janet, My Website > Embed Kit;
+o en el sitio de Wix: abre www.edulearningtree.com en la computadora, Ctrl+U (ver código fuente), busca `embed.js` y copia lo que dice `data-token`.
+El dominio principal no cambia, así que Leo sigue igual.
 La dirección de prueba de Railway solo importa si la lista de dominios permitidos de Leo tiene algo escrito (vacía deja pasar todo).
 
 ## Botón "Start Enrollment"
@@ -57,7 +62,7 @@ Es un borrador nuevo: Janet debe aprobarlo.
 
 ## Pendientes (busca TODO en el código)
 - Nombres de campo del payload de LeadPrime (comparar con el ejemplo de Chuch).
-- Código del embed kit de Leo AI.
+- Token de Leo (`LEO_WIDGET_TOKEN`) en Railway: sin él no salen ni la burbuja de Leo ni el envío del formulario.
 - Descripciones para Google (meta description) de cada página: copiarlas de Wix > SEO.
 - Mensaje exacto que Wix muestra al enviar el formulario.
 - Política de privacidad: es un BORRADOR nuevo (en Wix no existía). Janet debe aprobar el texto de `src/content/privacy.js` antes de salir con su dominio.

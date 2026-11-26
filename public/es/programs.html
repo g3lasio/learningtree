@@ -162,10 +162,11 @@
   <a href="https://koalendar.com/e/welcome-to-learning-tree" aria-label="Programe una visita"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h4v18H3V4h4V2Zm12 7H5v11h14V9Zm-8 2.5h1.6V18h-1.5v-4.8l-1.2.7-.4-1.3 1.5-1.1Z"/></svg></a>
 </nav>
 <!-- LEO_AI_EMBED: pega aquí el código del embed kit de LeadPrime (Leo AI) de la cuenta de Janet. Ver src/partials/leo-ai.html -->
-<!-- Leo AI (LeadPrime embed kit de Janet).
-     Pega aquí, tal cual, el código que da el embed kit de LeadPrime para la cuenta de Janet.
-     Es el mismo código que hoy está en Wix > Configuración > Código personalizado.
-     Al correr "npm run build" se copia a todas las páginas, justo antes de </body>. -->
+<!-- Leo AI (chat de LeadPrime). Es el código del "Embed Kit" de LeadPrime (My Website > Embed Kit).
+     El token NO va aquí: el servidor pone el valor de la variable LEO_WIDGET_TOKEN de Railway
+     en lugar de __LEO_WIDGET_TOKEN__. Sin esa variable, el servidor quita este bloque y no sale la burbuja. -->
+<script src="https://leadprime.chyrris.com/api/widget/embed.js" data-token="__LEO_WIDGET_TOKEN__" data-agent-name="Leo AI" data-lang="auto" async></script>
+<!-- /Leo AI -->
 <script src="/js/site.js" defer></script>
 </body>
 </html>

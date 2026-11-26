@@ -1,4 +1,5 @@
-<!-- Leo AI (LeadPrime embed kit de Janet).
-     Pega aquí, tal cual, el código que da el embed kit de LeadPrime para la cuenta de Janet.
-     Es el mismo código que hoy está en Wix > Configuración > Código personalizado.
-     Al correr "npm run build" se copia a todas las páginas, justo antes de </body>. -->
+<!-- Leo AI (chat de LeadPrime). Es el código del "Embed Kit" de LeadPrime (My Website > Embed Kit).
+     El token NO va aquí: el servidor pone el valor de la variable LEO_WIDGET_TOKEN de Railway
+     en lugar de __LEO_WIDGET_TOKEN__. Sin esa variable, el servidor quita este bloque y no sale la burbuja. -->
+<script src="https://leadprime.chyrris.com/api/widget/embed.js" data-token="__LEO_WIDGET_TOKEN__" data-agent-name="Leo AI" data-lang="auto" async></script>
+<!-- /Leo AI -->
