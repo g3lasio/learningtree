@@ -15,8 +15,15 @@ const images = new Map(); // id -> ext, para la lista de fotos a descargar
 const videos = new Set();
 let count = 0;
 
+// Cada cambio al CSS o JS cambia el ?v=, así el navegador baja la versión nueva y no usa la guardada.
+const crypto = require("crypto");
+const ver = (f) => crypto.createHash("md5").update(fs.readFileSync(path.join(OUT, f))).digest("hex").slice(0, 8);
+const cssV = ver("css/site.css");
+const jsV = ver("js/site.js");
+
 function write(rel, html) {
   html = html.replace("__LEO_AI_EMBED__", leoEmbed);
+  html = html.replace('href="/css/site.css"', 'href="/css/site.css?v=' + cssV + '"').replace('src="/js/site.js"', 'src="/js/site.js?v=' + jsV + '"');
   for (const m of html.matchAll(/\/img\/([0-9a-f]{32})\.(jpg|png)/g)) images.set(m[1], m[2]);
   for (const m of html.matchAll(/\/media\/([0-9a-f]{32})\.mp4/g)) videos.add(m[1]);
   const file = path.join(OUT, rel);
