@@ -37,6 +37,7 @@ for (const c of languages) {
   write(base + "contact.html", t.contact(c));
   c.portfolio.forEach((p, i) => write(`${base}portfolio-collections/my-portfolio/${p.slug}.html`, t.portfolioPage(c, i)));
   write(base + "thanks.html", t.thanks(c));
+  write(base + "privacy-policy.html", t.privacyPolicy(c));
   write(base + (c.lang === "en" ? "404.html" : "404.html"), t.notFound(c));
 }
 

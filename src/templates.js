@@ -478,7 +478,7 @@ ${vaccinesModal(e.vaccines)}
 <section class="en-start" id="anchor-1">
   <h2>${esc(e.startH2)}</h2>
   <p>${e.startLines.map(esc).join("<br>")}<br>${esc(e.startNote)}</p>
-  <a class="btn-sq btn-dark btn-wide" href="${esc(e.brightwheelUrl || site.brightwheelUrl)}">${esc(e.brightwheelButton)}</a>
+  <a class="btn-sq btn-dark btn-wide" href="${esc(site.ENROLLMENT_URL)}">${esc(e.enrollButton)}</a>
 </section>`;
   return layout(c, { title: e.title, description: e.description, path: "/enrollment", body, current: "enrollment" });
 }
@@ -550,4 +550,27 @@ function notFound(c) {
   return layout(c, { title: t.title, description: "", path: "/404", body, current: "" }).replace("<head>", '<head>\n<meta name="robots" content="noindex">');
 }
 
-module.exports = { home, about, programs, curriculum, gallery, portfolioPage, admissions, enrollment, contact, thanks, notFound };
+// Política de privacidad. BORRADOR para que Janet lo apruebe (texto en src/content/privacy.js).
+function privacyPolicy(c) {
+  const t = require("./content/privacy")[c.lang];
+  // Cada sección se arma en el orden en que vienen sus partes (párrafos "p" o viñetas "list").
+  const part = (k, v) => (k === "list" ? `<ul>${v.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : v.map((x) => `<p>${esc(x)}</p>`).join(""));
+  const sec = (s) => `<h2>${esc(s.h)}</h2>${Object.keys(s).filter((k) => k !== "h").map((k) => part(k, s[k])).join("")}`;
+  const contact = esc(t.contactText)
+    .replace("{phone}", `<a href="tel:+12094992779">${site.phone}</a>`)
+    .replace("{email}", `<a href="mailto:${site.email}">${site.email}</a>`);
+  const body = `
+<!-- TODO: BORRADOR de política de privacidad: Janet debe aprobar este texto (no existía en Wix). -->
+<section class="pp">
+  <h1>${esc(t.h1)}</h1>
+  <p class="pp-date">${esc(t.updated)}</p>
+  <p>${esc(t.intro)}</p>
+  ${t.sections.map(sec).join("\n  ")}
+  <h2>${esc(t.contactH)}</h2>
+  <p>${contact}</p>
+  <p>Learning Tree Family Child Care · Turlock, CA · CA Lic. #${site.license}</p>
+</section>`;
+  return layout(c, { title: t.title, description: "", path: "/privacy-policy", body, current: "" });
+}
+
+module.exports = { home, about, programs, curriculum, gallery, portfolioPage, admissions, enrollment, contact, thanks, notFound, privacyPolicy };

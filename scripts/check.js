@@ -35,7 +35,6 @@ for (const file of pages) {
   for (const m of html.matchAll(/href="(\/[^"]*)"/g)) {
     const url = m[1];
     if (url.startsWith("/css/") || url.startsWith("/img/") || url.startsWith("/js/")) continue;
-    if (url.endsWith("/privacy-policy")) continue; // también da 404 en Wix hoy; pendiente con Janet
     if (!exists(url)) { problems++; console.log(`✗ ${name}: enlace roto ${url}`); }
   }
 }

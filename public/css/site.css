@@ -536,3 +536,17 @@ main { padding-top: var(--hh); }
   .simple { padding: calc(60 * var(--u)) calc(20 * var(--u)); }
   .simple h1 { font-size: calc(32 * var(--u)); line-height: calc(38 * var(--u)); }
 }
+
+/* Política de privacidad (página nueva, no existía en Wix) */
+.pp { max-width: 760px; margin: 0 auto; padding: 70px 20px 90px; }
+.pp h1 { font-size: 56px; line-height: 67px; }
+.pp-date { margin-top: 10px; font-size: 14px; opacity: .8; }
+.pp h2 { margin-top: 38px; font-size: 28px; line-height: 36px; }
+.pp p, .pp li { margin-top: 12px; font-size: 16px; line-height: 28px; }
+.pp ul { margin-top: 8px; padding-left: 22px; list-style: disc; }
+.pp li { margin-top: 8px; }
+@media (max-width: 999px) {
+  .pp { padding: calc(30 * var(--u)) calc(20 * var(--u)) calc(50 * var(--u)); }
+  .pp h1 { font-size: calc(34 * var(--u)); line-height: calc(41 * var(--u)); }
+  .pp h2 { font-size: calc(21 * var(--u)); line-height: calc(28 * var(--u)); }
+}

@@ -22,7 +22,7 @@ module.exports = {
     languageSelector: "Language Selector: English",
     languages: { en: "English", es: "Spanish" },
     floatingBookTour: "Book a Tour",
-    startEnrollment: "Start enrollment",
+    startEnrollment: "Start Enrollment",
     skip: "Skip to Main Content",
     footer: {
       hours: "Daycare Hours: Monday – Friday 7:00 am - 11:00 pm",
@@ -285,7 +285,7 @@ module.exports = {
     img: img("0d302e8575484a0daf3703a6f849053c", "jpg", "Children enjoying reading time at Learning Tree"),
     steps: [
       { n: "1", title: "Book a Tour", text: "Schedule a personalized visit to see our classrooms, meet our experienced staff, and experience our nurturing environment firsthand. Ask questions and see how we bring our philosophy to life." },
-      { n: "2", title: "Submit Your Application", text: "Complete your online application through Brightwheel and provide all required documentation, and complete the application fee for a seamless enrollment experience. Early submission offers the best opportunity to secure your preferred start date." },
+      { n: "2", title: "Submit Your Application", text: "Complete your online application through our secure enrollment system, provide all required documentation, and pay the enrollment fee for a seamless enrollment experience. Early submission offers the best opportunity to secure your preferred start date." },
       { n: "3", title: "Secure Your Child's Enrollment", text: "Upon acceptance, a one-month tuition deposit is required to hold your child's spot. This deposit will be applied toward your child's last month of tuition. Payment should be made promptly to guarantee placement." },
       { n: "4", title: "Join Our Community", text: "Connect with us on social media, attend orientation, and become part of the Learning Tree family. Stay informed about events, activities, updates, and your child's daily adventures." },
     ],
@@ -306,9 +306,9 @@ module.exports = {
     clickHere: "Click Here",
     howH2: "HOW TO ENROLL",
     steps: [
-      { title: "Step 1: Click the Enrollment Button", link: true, text: ["Click the Enroll in Brightwheel button below and create your parent account in Brightwheel to access the enrollment package."] },
+      { title: "Step 1: Click the Enrollment Button", link: true, text: ["Click the Start Enrollment button below to open our secure enrollment system and access the enrollment package."] },
       { title: "Step 2: Complete the Forms", text: ["Please fill out all required forms and upload any requested documents."] },
-      { title: "Step 3: Submit & Pay Enrollment Fee", text: ["Review your information, submit your forms, and complete the $60 enrollment fee through Brightwheel.", "Please note: The enrollment fee is required to process your application and does not guarantee a spot."] },
+      { title: "Step 3: Submit & Pay Enrollment Fee", text: ["Review your information, submit your forms, and pay the $60 enrollment fee in our secure enrollment system.", "Please note: The enrollment fee is required to process your application and does not guarantee a spot."] },
       { title: "Step 4: Enrollment Confirmation", text: ["Once your forms are reviewed, we will contact you to confirm availability and your child’s official start date."] },
     ],
     needH2: "What You’ll Need",
@@ -349,8 +349,8 @@ module.exports = {
       "You’re just a few steps away from joining the Learning Tree family.",
       "Please complete your enrollment through our secure system to get started.",
     ],
-    startNote: "All required forms, documents, and the enrollment fee will be submitted through Brightwheel for a smooth and simple experience.",
-    brightwheelButton: "Enroll in Brightwheel",
+    startNote: "All required forms, documents, and the $60 enrollment fee are completed in our secure enrollment system for a smooth and simple experience.",
+    enrollButton: "Start Enrollment",
   },
 
   contact: {

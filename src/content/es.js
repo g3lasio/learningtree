@@ -1,6 +1,7 @@
 // Texto exacto de la versión en español del sitio (edulearningtree.com/es), copiado el 25 nov 2026.
 // Igual que en Wix, varias partes siguen en inglés (galería, portafolio, campos del formulario, la mayoría de los títulos).
-// Las rarezas del original se dejan igual a propósito ("pacientes", "Nuestras aula", tú/usted mezclados, $55).
+// Las rarezas del original se dejan igual a propósito ("pacientes", "Nuestras aula", tú/usted mezclados).
+// Cambios pedidos por Gelasio (26 nov 2026): la cuota es $60 en los dos idiomas e inscripción sin Brightwheel.
 const en = require("./en");
 const img = (id, ext, alt) => ({ id, ext, alt });
 const withAlts = (list, alts) => list.map((it, i) => (it.video ? it : { ...it, alt: alts.shift() }));
@@ -220,7 +221,7 @@ module.exports = {
     img: { ...en.admissions.img, alt: "Los niños disfrutan de la hora de lectura en Learning Tree." },
     steps: [
       { n: "1", title: "Reserva una visita guiada", text: "Programe una visita personalizada para conocer nuestras aulas, a nuestro experimentado personal y experimentar de primera mano nuestro ambiente estimulante. Haga preguntas y vea cómo ponemos en práctica nuestra filosofía." },
-      { n: "2", title: "Presenta tu solicitud", text: "Completa tu solicitud en línea a través de Brightwheel, proporciona toda la documentación requerida y abona la cuota de inscripción para una experiencia de matrícula sin complicaciones. Presentar tu solicitud con anticipación te brinda la mejor oportunidad de asegurar la fecha de inicio que prefieras." },
+      { n: "2", title: "Presenta tu solicitud", text: "Completa tu solicitud en línea en nuestro sistema seguro de inscripción, proporciona toda la documentación requerida y paga la cuota de inscripción para una experiencia de matrícula sin complicaciones. Presentar tu solicitud con anticipación te brinda la mejor oportunidad de asegurar la fecha de inicio que prefieras." },
       { n: "3", title: "Asegure la inscripción de su hijo/a", text: "Una vez aceptada la solicitud, se requiere un depósito equivalente a un mes de matrícula para reservar la plaza de su hijo/a. Este depósito se aplicará al último mes de matrícula. El pago debe realizarse puntualmente para garantizar la plaza." },
       { n: "4", title: "Únete a nuestra comunidad", text: "Conéctate con nosotros en las redes sociales, asiste a la sesión informativa y forma parte de la familia Learning Tree. Mantente al tanto de los eventos, actividades, novedades y las aventuras diarias de tu hijo/a." },
     ],
@@ -238,9 +239,9 @@ module.exports = {
     clickHere: "Haga clic aquí",
     howH2: "CÓMO INSCRIBIRSE",
     steps: [
-      { title: "Paso 1: Haga clic en el botón de inscripción.", link: true, text: ["Haz clic en el botón \"Inscribirse en Brightwheel\" que aparece a continuación y crea tu cuenta de padre/madre en Brightwheel para acceder al paquete de inscripción."] },
+      { title: "Paso 1: Haga clic en el botón de inscripción.", link: true, text: ["Haz clic en el botón \"Iniciar inscripción\" que aparece a continuación para abrir nuestro sistema seguro de inscripción y acceder al paquete de inscripción."] },
       { title: "Paso 2: Complete los formularios", text: ["Por favor, rellene todos los formularios obligatorios y suba los documentos que se le soliciten."] },
-      { title: "Paso 3: Enviar y pagar la cuota de inscripción", text: ["Revisa tu información, envía tus formularios y completa la cuota de inscripción de $55 a través de Brightwheel.", "Tenga en cuenta: La cuota de inscripción es necesaria para tramitar su solicitud y no garantiza una plaza."] },
+      { title: "Paso 3: Enviar y pagar la cuota de inscripción", text: ["Revisa tu información, envía tus formularios y paga la cuota de inscripción de $60 en nuestro sistema seguro de inscripción.", "Tenga en cuenta: La cuota de inscripción es necesaria para tramitar su solicitud y no garantiza una plaza."] },
       { title: "Paso 4: Confirmación de inscripción", text: ["Una vez revisados sus formularios, nos pondremos en contacto con usted para confirmar la disponibilidad y la fecha oficial de inicio de su hijo/a."] },
     ],
     needH2: "Lo que necesitarás",
@@ -288,11 +289,8 @@ module.exports = {
       "Estás a solo unos pasos de unirte a la familia de Learning Tree.",
       "Para comenzar, complete su inscripción a través de nuestro sistema seguro.",
     ],
-    startNote: "Para una experiencia sencilla y sin complicaciones, todos los formularios, documentos y la cuota de inscripción necesarios se enviarán a través de Brightwheel.",
-    brightwheelButton: "Inscríbete en Brightwheel",
-    // En español Wix enlaza a OTRO paquete de Brightwheel (07ca2e1b…), no al de inglés.
-    brightwheelUrl:
-      "https://schools.mybrightwheel.com/sign-in?redirect_path=/admissions/packet/07ca2e1b-d477-4874-b963-edac23befcfe/fill?school_id=40f24253-3a75-43f2-b4fd-a72d0c86ee01",
+    startNote: "Para una experiencia sencilla y sin complicaciones, todos los formularios, documentos y la cuota de inscripción de $60 se completan en nuestro sistema seguro de inscripción.",
+    enrollButton: "Iniciar inscripción",
   },
 
   contact: {

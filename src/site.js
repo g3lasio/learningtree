@@ -4,8 +4,6 @@ module.exports = {
 
   // Enlaces externos, copiados tal cual del sitio de Wix (25 nov 2026).
   bookTourUrl: "https://koalendar.com/e/welcome-to-learning-tree",
-  brightwheelUrl:
-    "https://schools.mybrightwheel.com/sign-in?redirect_path=%2Fadmissions%2Fpacket%2F46fb9a50-a2ad-4d30-ae58-5e951e6d1a99%2Ffill%3Fschool_id%3D40f24253-3a75-43f2-b4fd-a72d0c86ee01",
   instagramUrl: "https://www.instagram.com/learningtreellc",
   facebookUrl: "https://www.facebook.com/edulearningtree",
   // Mapa de la página de contacto (en Wix es un mapa de Google con la dirección de la guardería).
@@ -14,10 +12,9 @@ module.exports = {
   email: "info@edulearningtree.com",
   license: "503912200",
 
-  // NUEVO: botón "Start enrollment". ENROLLMENT_URL es la única dirección que usan todos los botones de inscripción.
-  // Hoy es la dirección interina que dio Chuch (25 nov 2026): el app de familias en LeadPrime.
-  // Cuando LeadPrime termine la página pública de inscripción, Chuch da la dirección final y solo se cambia esta línea.
-  ENROLLMENT_URL: "https://leadprime.chyrris.com/learning-tree-familia",
+  // Botón "Start Enrollment": todos los botones de inscripción usan esta dirección.
+  // Es la dirección permanente de inscripción en LeadPrime que dio Gelasio (26 nov 2026). El fee de $60 se paga ahí.
+  ENROLLMENT_URL: "https://leadprime.chyrris.com/learning-tree-enrollment/learning-tree-family-childcare-llc",
 
   // Las fotos vienen de la biblioteca de Wix de Janet. Se guardan en public/img/<id>.<ext>.
   // Si una foto todavía no se descargó, el servidor la pide a Wix (ver server.js).
