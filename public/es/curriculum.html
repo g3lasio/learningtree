@@ -123,8 +123,44 @@
 <!-- LEO_AI_EMBED: pega aquí el código del embed kit de LeadPrime (Leo AI) de la cuenta de Janet. Ver src/partials/leo-ai.html -->
 <!-- Leo AI (chat de LeadPrime). Es el código del "Embed Kit" de LeadPrime (My Website > Embed Kit).
      El token NO va aquí: el servidor pone el valor de la variable LEO_WIDGET_TOKEN de Railway
-     en lugar de __LEO_WIDGET_TOKEN__. Sin esa variable, el servidor quita este bloque y no sale la burbuja. -->
-<script src="https://leadprime.chyrris.com/api/widget/embed.js" data-token="__LEO_WIDGET_TOKEN__" data-agent-name="Leo AI" data-lang="auto" async></script>
+     en lugar de __LEO_WIDGET_TOKEN__. Sin esa variable, el servidor quita este bloque y no sale nada.
+     El botón de abajo copia el de Wix (león, "Leo AI", color oliva y el anillo que late).
+     El botón propio de LeadPrime ("Chat with us") se esconde; el nuestro lo abre. -->
+<style>
+  #lp-widget-btn { display: none !important; }
+  #lp-widget { bottom: 155px !important; }
+  /* Que los estilos del sitio (títulos, letra, colores) no se metan en la ventana del chat, como en Wix. */
+  #lp-widget { color: #1f2937; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; letter-spacing: normal; text-align: left; }
+  #lp-widget h3 { margin: 0; color: #fff; font: 700 16px/1.3 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; letter-spacing: normal; }
+  #lp-widget input, #lp-widget textarea, #lp-widget button { font-family: inherit; letter-spacing: normal; }
+  #leo-launcher { position: fixed; right: 24px; bottom: 90px; z-index: 9998; height: 56px; display: flex; align-items: center; gap: 9px; padding: 0 17px 0 5px; border: 0; border-radius: 28px; background: #656d4a; color: #fff; font: 700 16px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; cursor: pointer; box-shadow: 0 4px 20px rgba(0, 0, 0, .25); transition: transform .2s, box-shadow .2s; }
+  #leo-launcher:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(0, 0, 0, .3); }
+  #leo-launcher img { width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, .2); }
+  #leo-launcher::before { content: ""; position: absolute; inset: -6px; border: 2px solid rgba(37, 99, 235, .55); border-radius: 34px; animation: leo-ring 2.4s ease-out infinite; pointer-events: none; }
+  #leo-launcher[hidden] { display: none; }
+  @keyframes leo-ring { 0% { opacity: .9; transform: scale(.96); } 70% { opacity: 0; transform: scale(1.08); } 100% { opacity: 0; transform: scale(1.08); } }
+  @media (prefers-reduced-motion: reduce) { #leo-launcher::before { animation: none; opacity: .5; } }
+</style>
+<button id="leo-launcher" type="button" aria-label="Leo AI — chat" hidden><img src="/img/leo-avatar.png" alt=""><span>Leo AI</span></button>
+<script src="https://leadprime.chyrris.com/api/widget/embed.js" data-token="__LEO_WIDGET_TOKEN__" data-agent-name="Leo AI" data-color="#656d4a" data-avatar="/img/leo-avatar.png" data-position="bottom-right" data-lang="auto" async></script>
+<script>
+  (function () {
+    var me = document.getElementById("leo-launcher");
+    // Espera a que LeadPrime arme su chat; entonces muestra nuestro botón y lo conecta.
+    var tries = 0;
+    var wait = setInterval(function () {
+      var btn = document.getElementById("lp-widget-btn");
+      var panel = document.getElementById("lp-widget");
+      if (!btn || !panel) { if (++tries > 120) clearInterval(wait); return; }
+      clearInterval(wait);
+      me.hidden = false;
+      me.addEventListener("click", function () { btn.click(); });
+      // Como en Wix: mientras el chat está abierto, el botón se esconde.
+      new MutationObserver(function () { me.hidden = panel.classList.contains("open"); })
+        .observe(panel, { attributes: true, attributeFilter: ["class"] });
+    }, 250);
+  })();
+</script>
 <!-- /Leo AI -->
 <script src="/js/site.js" defer></script>
 </body>
