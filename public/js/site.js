@@ -3,14 +3,20 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 
-  // Menú del teléfono
+  // Menú del teléfono (panel verde de pantalla completa, como en Wix)
   const toggle = $(".menu-toggle");
-  const nav = $("#site-nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+  const menu = $("#mobile-menu");
+  if (toggle && menu) {
+    const closeBtn = $(".mobile-close", menu);
+    const setOpen = (open) => {
+      menu.hidden = !open;
       toggle.setAttribute("aria-expanded", String(open));
-    });
+      document.body.style.overflow = open ? "hidden" : "";
+      (open ? closeBtn : toggle).focus();
+    };
+    toggle.addEventListener("click", () => setOpen(true));
+    closeBtn.addEventListener("click", () => setOpen(false));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) setOpen(false); });
   }
 
   // Submenús (Our Approach, Admissions)
@@ -84,7 +90,7 @@
       vx.hidden = false;
       $(".tab", vx).focus();
     });
-    $(".modal-close", vx).addEventListener("click", hide);
+    $$(".modal-close, .modal-x", vx).forEach((b) => b.addEventListener("click", hide));
     vx.addEventListener("click", (e) => { if (e.target === vx) hide(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !vx.hidden) hide(); });
     const tabs = $$(".tab", vx);
@@ -98,6 +104,15 @@
       })
     );
   }
+
+  // Fecha de inicio: muestra "Choose a date" como en Wix y abre el calendario al tocarla.
+  $$(".date-input").forEach((d) => {
+    d.addEventListener("focus", () => {
+      d.type = "date";
+      try { if (d.showPicker) d.showPicker(); } catch (e) {}
+    });
+    d.addEventListener("blur", () => { if (!d.value) d.type = "text"; });
+  });
 
   // Formulario de contacto: revisa los obligatorios y lo manda sin salir de la página.
   const form = $(".contact-form");

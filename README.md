@@ -42,19 +42,20 @@ Todos los botones de inscripción usan una sola constante: `src/site.js` > `ENRO
 Hoy es la dirección interina que dio Chuch: https://leadprime.chyrris.com/learning-tree-familia
 Cuando Chuch dé la dirección final, se cambia esa línea y se corre `npm run build`.
 
-## Deploy en Railway (solo cuando lo apruebes)
-1. En Railway: New Project > Deploy from GitHub repo > elige este repo.
-2. Variables: `LEO_WIDGET_TOKEN`.
-3. Settings > Networking > Generate Domain, para revisar el sitio en una dirección de prueba.
-4. Cuando Janet lo apruebe: Settings > Networking > Custom Domain con `www.edulearningtree.com` y `edulearningtree.com`.
-Railway corre `npm start` y revisa `/health` (ver `railway.json`). Las páginas de `public/` ya van armadas en el repo.
+## Deploy en Railway (lo haces tú)
+1. En railway.com: New Project > Deploy from GitHub repo > `g3lasio/learningtree`, rama `main`.
+   No hay que configurar nada más: Railway ve el `package.json`, corre `npm start` y revisa `/health` (ver `railway.json`).
+2. Service > Variables: agrega `LEO_WIDGET_TOKEN` con el token del embed kit de Leo de Janet.
+   Puedes hacer el deploy sin ella para ver el sitio; el formulario no mandará nada a LeadPrime hasta que la pongas.
+3. Service > Settings > Networking > Generate Domain. Te da una dirección `...up.railway.app` para ver el sitio.
+4. Revisa en esa dirección: inglés y español, teléfono y computadora, el menú, los botones de Koalendar y Brightwheel, y el botón "Start enrollment".
+5. Todavía NO pongas el dominio de Janet. Eso (Custom Domain con `www.edulearningtree.com` y `edulearningtree.com`, y luego mover el DNS) va después, cuando ella apruebe el sitio.
 
 ## Pendientes (busca TODO en el código)
 - Dirección final del formulario de inscripción (hoy va la interina).
 - Nombres de campo del payload de LeadPrime (comparar con el ejemplo de Chuch).
 - Código del embed kit de Leo AI.
 - Descripciones para Google (meta description) de cada página: copiarlas de Wix > SEO.
-- Ventana de vacunas en inglés (en español ya está).
 - Mensaje exacto que Wix muestra al enviar el formulario.
 - El enlace "Privacy Policy" del pie da error 404 también en Wix hoy.
 - En español la cuota dice $55 y en inglés $60, y el paquete de Brightwheel es distinto en cada idioma. Se copió igual; confirmar con Janet.

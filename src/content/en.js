@@ -40,6 +40,7 @@ module.exports = {
     },
     previous: "Previous",
     next: "Next",
+    pfLoop: false, // en Wix la primera colección solo tiene "Next" y la última solo "Previous"
   },
 
   home: {
@@ -321,6 +322,28 @@ module.exports = {
     ],
     immunizations: "Inmunizations",
     immunizationsButton: "(Click for more information)",
+    // Ventana de vacunas (copiada de Wix en inglés, 26 nov 2026).
+    vaccines: {
+      close: "Back to site",
+      tabs: [
+        {
+          label: "Vaccines",
+          intro: "Vaccines:",
+          rows: [["Polio", 4], ["DTaP", 5], ["MMR", 2], ["Hib", 4], ["Hepatitis B", 3], ["Varicella", 2]],
+        },
+        {
+          label: "Dosis",
+          list: [
+            "Polio – at least three dosed (if the third or last dose was given before two years of age one additional dose is required)",
+            "DTaP/TD – at least four doses (if the fourth or last dose was given before two years of age one additional dose is required)",
+            "MMR (Measles, Mumps and Rubella) – one dose of each on or after the first birthday",
+            "Hib & HepB – third dose at least four months after the first dose",
+            "Varicella – on or after first birthday",
+            "Booster Polio, DTaP and MMR between four to five years old",
+          ],
+        },
+      ],
+    },
     startH2: "Start your Enrollment Process",
     startLines: [
       "You’re just a few steps away from joining the Learning Tree family.",
