@@ -3,7 +3,10 @@ module.exports = {
   domain: "https://edulearningtree.com",
 
   // Enlaces externos, copiados tal cual del sitio de Wix (25 nov 2026).
-  bookTourUrl: "https://koalendar.com/e/welcome-to-learning-tree",
+  // 27 nov 2026 (Opción A, orden del dueño): los tours ya no van a Koalendar;
+  // la puerta es la página pública de reservas nativa de LeadPrime de la cuenta
+  // de Janet — cada tour nace como lead + cita en su propio calendario.
+  bookTourUrl: "https://leadprime.chyrris.com/b/con-mv1u45l0xdnhov49m",
   instagramUrl: "https://www.instagram.com/learningtreellc",
   facebookUrl: "https://www.facebook.com/edulearningtree",
   // Mapa de la página de contacto (en Wix es un mapa de Google con la dirección de la guardería).

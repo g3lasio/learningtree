@@ -3,7 +3,7 @@
 // Janet tiene que leerlo y aprobarlo antes de que el sitio salga con su dominio.
 // Cada sección es { h: título, p: [párrafos], list: [viñetas] }.
 
-const updated = { en: "Last updated: November 26, 2026", es: "Última actualización: 26 de noviembre de 2026" };
+const updated = { en: "Last updated: November 27, 2026", es: "Última actualización: 27 de noviembre de 2026" };
 
 const en = {
   title: "Privacy Policy | Learning Tree Family Child Care",
@@ -18,6 +18,7 @@ const en = {
       p: ["We only collect the information you choose to give us, plus basic technical information that any website receives."],
       list: [
         "Contact form: your first and last name, email address, phone number, your child’s age, your desired start date, how you heard about us, and any message you write.",
+        "Tour booking: when you book a tour on our scheduling page, we collect your name, mobile phone number, email address, home address, and any note you add, so we can hold and confirm your visit.",
         "Leo AI chat: the messages you type and any contact details you share in the chat.",
         "Enrollment: when you start enrollment, our secure enrollment system collects the information needed to enroll your child, such as your child’s basic information, parent or guardian contact information, emergency contacts, medical and immunization information, and signed forms.",
         "Enrollment fee: the fee is paid in our secure enrollment system and processed by its payment provider. We do not see or store your full card number.",
@@ -38,14 +39,14 @@ const en = {
       h: "How we share your information",
       p: [
         "We do not sell or rent your personal information, and we do not share it for advertising.",
-        "We share information only with the service providers that help us run our program and this website, such as LeadPrime (the system we use for our contact form, the Leo AI chat, and enrollment) and our website hosting provider. They may use your information only to provide their services to us.",
+        "We share information only with the service providers that help us run our program and this website, such as LeadPrime (the system we use for our contact form, the Leo AI chat, tour scheduling, and enrollment) and our website hosting provider. They may use your information only to provide their services to us.",
         "We may also share information when the law requires it, including with the California Department of Social Services, Community Care Licensing Division, as part of our license, or to protect the safety of a child.",
       ],
     },
     {
       h: "Other websites and services",
       p: [
-        "Our website links to or shows content from other services, such as Koalendar (tour booking), Google Maps, Instagram, and Facebook. When you use them, their own privacy policies apply.",
+        "Our website links to or shows content from other services, such as Google Maps, Instagram, and Facebook. When you use them, their own privacy policies apply.",
         "Our website does not use advertising cookies. It saves a small note in your browser so the welcome message does not open again during the same visit.",
       ],
     },
@@ -95,6 +96,7 @@ const es = {
       p: ["Solo recopilamos la información que usted decide darnos, además de la información técnica básica que recibe cualquier sitio web."],
       list: [
         "Formulario de contacto: su nombre y apellido, correo electrónico, teléfono, la edad de su hijo/a, la fecha de inicio deseada, cómo supo de nosotros y cualquier mensaje que escriba.",
+        "Reserva de visitas: cuando reserva una visita en nuestra página de agenda, recopilamos su nombre, número de celular, correo electrónico, domicilio y cualquier nota que agregue, para guardar y confirmar su visita.",
         "Chat de Leo AI: los mensajes que escribe y los datos de contacto que comparta en el chat.",
         "Inscripción: cuando inicia la inscripción, nuestro sistema seguro de inscripción recopila la información necesaria para inscribir a su hijo/a, como sus datos básicos, la información de contacto de los padres o tutores, contactos de emergencia, información médica y de vacunas, y formularios firmados.",
         "Cuota de inscripción: la cuota se paga en nuestro sistema seguro de inscripción y la procesa su proveedor de pagos. Nosotros no vemos ni guardamos el número completo de su tarjeta.",
@@ -115,14 +117,14 @@ const es = {
       h: "Con quién compartimos su información",
       p: [
         "No vendemos ni alquilamos su información personal, y no la compartimos para publicidad.",
-        "Solo compartimos información con los proveedores de servicios que nos ayudan a operar nuestro programa y este sitio web, como LeadPrime (el sistema que usamos para el formulario de contacto, el chat de Leo AI y la inscripción) y nuestro proveedor de hospedaje web. Ellos solo pueden usar su información para prestarnos sus servicios.",
+        "Solo compartimos información con los proveedores de servicios que nos ayudan a operar nuestro programa y este sitio web, como LeadPrime (el sistema que usamos para el formulario de contacto, el chat de Leo AI, la agenda de visitas y la inscripción) y nuestro proveedor de hospedaje web. Ellos solo pueden usar su información para prestarnos sus servicios.",
         "También podemos compartir información cuando la ley lo exige, incluido con el Departamento de Servicios Sociales de California, División de Licencias de Cuidado Comunitario, como parte de nuestra licencia, o para proteger la seguridad de un niño.",
       ],
     },
     {
       h: "Otros sitios y servicios",
       p: [
-        "Nuestro sitio enlaza o muestra contenido de otros servicios, como Koalendar (reserva de visitas), Google Maps, Instagram y Facebook. Cuando usted los usa, se aplican sus propias políticas de privacidad.",
+        "Nuestro sitio enlaza o muestra contenido de otros servicios, como Google Maps, Instagram y Facebook. Cuando usted los usa, se aplican sus propias políticas de privacidad.",
         "Nuestro sitio no usa cookies de publicidad. Guarda una pequeña nota en su navegador para que el mensaje de bienvenida no se vuelva a abrir durante la misma visita.",
       ],
     },
