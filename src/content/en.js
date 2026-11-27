@@ -79,16 +79,23 @@ module.exports = {
       ["a8782cb5b2a94bd0bafe4ff7e659af91", "Two children with cupcakes and party hats"],
     ].map(([id, alt]) => img(id, "jpg", alt)),
     // Bloque del app de padres (barrida nov 2026): solo funciones reales del app de familias.
+    // Textos y capturas reales aprobados por el dueño (27 nov 2026): el app servido en producción, datos DEMO.
     appTitle: "The Learning Tree Parent App",
-    appIntro: "Our families have their own app. With your phone number you can:",
+    appIntro: "Life with little ones is busy enough. Our parent app keeps your child's day in one calm place — no paper chasing, no lost notes, and no extra accounts to create.",
     appPoints: [
-      "Check your child in and out",
-      "View and sign documents",
-      "Read the Parent Handbook and your enrollment packet",
-      "Receive announcements from Janet",
-      "See the status of your payments",
+      "One-tap check-in and check-out — mornings and pickups stay quick and calm.",
+      "Sign documents right from your phone — enrollment forms and permissions without printing, scanning, or trips to drop off papers.",
+      "The Parent Handbook and your enrollment packet, always at hand — read them anytime, in English or Spanish.",
+      "Announcements from Janet come straight to you — closures, reminders, and news, never lost in a backpack.",
+      "See your payments and balance at a glance — no surprises, no guessing.",
     ],
-    appClose: "One place for everything — no extra accounts to create.",
+    appShots: [
+      { src: "/img/app-acceso-en.jpg", alt: "Parent app sign-in screen — families enter with their phone number" },
+      { src: "/img/app-dia-en.jpg", alt: "The Day screen — one-tap check-in and announcements from Janet" },
+      { src: "/img/app-documentos-en.jpg", alt: "Documents screen — forms to complete and sign from your phone" },
+      { src: "/img/app-paquete-en.jpg", alt: "The enrollment packet open inside the parent app" },
+    ],
+    appClose: "Everything about your child's care, in your pocket — so you spend less time on paperwork and more time with your little one.",
     appButton: "Go to the Parent App",
   },
 

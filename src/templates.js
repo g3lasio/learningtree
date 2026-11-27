@@ -236,6 +236,9 @@ function home(c) {
   <ul class="h-app-list">
     ${h.appPoints.map((x) => `<li>${esc(x)}</li>`).join("\n    ")}
   </ul>
+  <div class="h-app-phones">
+    ${(h.appShots || []).map((s) => `<figure class="h-app-phone"><img src="${esc(s.src)}" alt="${esc(s.alt)}" loading="lazy" decoding="async"></figure>`).join("\n    ")}
+  </div>
   <p class="h-app-close">${esc(h.appClose)}</p>
   <a class="btn-fill" href="${site.PARENT_APP_URL}">${esc(h.appButton)}</a>
 </section>`;

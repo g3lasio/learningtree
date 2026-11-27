@@ -156,6 +156,11 @@ main { padding-top: var(--hh); }
 .h-app-list li::before { content: "• "; }
 .h-app-close { margin-top: 22px; }
 .h-app .btn-fill { margin-top: 34px; width: auto; padding: 0 26px; }
+/* Capturas reales del app en marcos de teléfono (27 nov 2026) */
+.h-app-phones { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; margin: 38px auto 4px; max-width: 1060px; }
+.h-app-phone { margin: 0; width: 206px; background: #14181d; border-radius: 38px; padding: 11px; box-shadow: 0 16px 32px rgba(28, 39, 51, .22); }
+.h-app-phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
+@media (max-width: 600px) { .h-app-phone { width: 43%; } }
 
 /* ---------- About Us ---------- */
 .a-hero { position: relative; padding: 40px calc(80 * var(--x)) 0 calc(39 * var(--x)); min-height: 533px; }
