@@ -237,7 +237,7 @@ function home(c) {
     ${h.appPoints.map((x) => `<li>${esc(x)}</li>`).join("\n    ")}
   </ul>
   <div class="h-app-phones">
-    ${(h.appShots || []).map((s) => `<figure class="h-app-phone"><img src="${esc(s.src)}" alt="${esc(s.alt)}" loading="lazy" decoding="async"></figure>`).join("\n    ")}
+    ${(h.appShots || []).map((s, i) => `<figure class="h-app-phone p${i + 1}"><img src="${esc(s.src)}" alt="${esc(s.alt)}" loading="lazy" decoding="async"></figure>`).join("\n    ")}
   </div>
   <p class="h-app-close">${esc(h.appClose)}</p>
   <a class="btn-fill" href="${site.PARENT_APP_URL}">${esc(h.appButton)}</a>
@@ -421,7 +421,7 @@ function admissions(c) {
   </div>
   <ol class="ad-steps">
     ${a.steps
-      .map((s) => `<li><h3><span>${esc(s.n)}</span><span class="bar" aria-hidden="true"></span><span>${esc(s.title)}</span></h3><p class="body">${esc(s.text)}</p></li>`)
+      .map((s) => `<li><h3><span>${esc(s.n)}</span><span class="bar" aria-hidden="true"></span><span>${esc(s.title)}</span></h3><p class="body">${esc(s.text)}</p>${s.n === "1" ? `<a class="btn-fill ad-step-btn" href="${site.bookTourUrl}">${esc(a.tourButton)}</a>` : ""}</li>`)
       .join("\n    ")}
   </ol>
 </section>

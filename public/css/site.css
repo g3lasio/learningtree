@@ -156,11 +156,17 @@ main { padding-top: var(--hh); }
 .h-app-list li::before { content: "• "; }
 .h-app-close { margin-top: 22px; }
 .h-app .btn-fill { margin-top: 34px; width: auto; padding: 0 26px; }
-/* Capturas reales del app en marcos de teléfono (27 nov 2026) */
-.h-app-phones { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; margin: 38px auto 4px; max-width: 1060px; }
-.h-app-phone { margin: 0; width: 206px; background: #14181d; border-radius: 38px; padding: 11px; box-shadow: 0 16px 32px rgba(28, 39, 51, .22); }
-.h-app-phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
-@media (max-width: 600px) { .h-app-phone { width: 43%; } }
+/* Mockups del app en abanico (27 nov 2026): marco y sombra suave van dentro de cada imagen */
+.h-app-phones { display: flex; justify-content: center; align-items: flex-end; margin: 40px auto 8px; max-width: 1090px; }
+.h-app-phone { margin: 0; flex: 0 1 336px; position: relative; }
+.h-app-phone img { display: block; width: 100%; height: auto; }
+.h-app-phone.p1 { transform: rotate(-7deg) translateY(18px); margin-right: -48px; z-index: 1; }
+.h-app-phone.p2 { transform: rotate(0deg); z-index: 3; flex-basis: 362px; }
+.h-app-phone.p3 { transform: rotate(7deg) translateY(18px); margin-left: -48px; z-index: 2; }
+@media (max-width: 600px) {
+  .h-app-phone.p1 { margin-right: -34px; }
+  .h-app-phone.p3 { margin-left: -34px; }
+}
 
 /* ---------- About Us ---------- */
 .a-hero { position: relative; padding: 40px calc(80 * var(--x)) 0 calc(39 * var(--x)); min-height: 533px; }
@@ -284,6 +290,7 @@ main { padding-top: var(--hh); }
 .ad-steps h3 { display: flex; align-items: center; gap: 14px; font-size: 22px; line-height: 31px; }
 .ad-steps .bar { width: 1px; height: 26px; background: var(--olive); }
 .ad-steps .body { margin-top: 43px; font-size: 15.3px; line-height: 29px; }
+.ad-step-btn { margin-top: 18px; width: auto; padding: 0 26px; }
 .ad-touch { position: relative; isolation: isolate; height: 245px; display: flex; align-items: center; justify-content: center; }
 .ad-touch-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 .ad-touch-box { width: calc(1205 * var(--x)); height: 168px; background: var(--bg); display: flex; align-items: center; justify-content: space-between; padding: 0 calc(137 * var(--x)) 0 calc(80 * var(--x)); }
