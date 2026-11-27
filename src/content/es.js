@@ -82,9 +82,17 @@ module.exports = {
     languages: { en: "English", es: "Spanish" },
     floatingBookTour: "Programe una visita",
     startEnrollment: "Iniciar inscripción", // NUEVO (no existe en Wix). Confirmar el texto con Janet.
+    parentApp: "App para padres",
     skip: "Ir al contenido principal",
-    // En español Wix solo muestra el copyright en el pie (sin horario, contacto, licencia ni Privacy Policy).
-    footer: { copyright: "© 2026 por Learning Tree Family Child Care" },
+    // En Wix el pie en español solo mostraba el copyright; desde la barrida de nov 2026 trae
+    // las mismas líneas que el inglés (horario, contacto, licencia y privacidad), con los mismos datos.
+    footer: {
+      hours: "Horario: lunes a viernes, 7:00 am – 11:00 pm",
+      contactPrefix: "Contáctanos: (209) 499-2779 |",
+      copyright: "© 2026 por Learning Tree Family Child Care",
+      licensePrefix: "Hogar de cuidado infantil familiar con licencia | Lic. CA #503912200 |",
+      privacy: "Política de privacidad",
+    },
     // La ventana de $60 no apareció en español durante la revisión; se deja el texto en inglés. Confirmar.
     popup: en.ui.popup,
     previous: "Previo",
@@ -96,7 +104,8 @@ module.exports = {
 
   home: {
     ...en.home,
-    title: "Learning Tree Family Child Care | Best Family Daycare in Turlock, CA",
+    title: "Learning Tree Family Child Care | Guardería con licencia en Turlock, CA",
+    description: "Cuidado infantil familiar con licencia en Turlock, CA. Learning Tree ofrece cuidado y aprendizaje temprano para bebés y niños en edad preescolar, lun–vie 7 am–11 pm.",
     h1: "Cultivando corazones bondadosos y mentes brillantes",
     tagline: "Un niño a la vez",
     welcome: "", // en español va todo en un solo párrafo
@@ -116,10 +125,23 @@ module.exports = {
     programsButton: "Más información",
     instagramH2: "Síguenos en Instagram",
     instagramButton: "Follow @learningtreellc",
+    appTitle: "La app para padres de Learning Tree",
+    appIntro: "Nuestras familias tienen su propia app. Con tu número de teléfono puedes:",
+    appPoints: [
+      "Registrar la llegada y la salida de tu hijo",
+      "Ver y firmar documentos",
+      "Leer el Manual de padres y tu paquete de inscripción",
+      "Recibir los avisos de Janet",
+      "Ver el estado de tus pagos",
+    ],
+    appClose: "Todo en un solo lugar, sin crear cuentas nuevas.",
+    appButton: "Ir a la app para padres",
   },
 
   about: {
     ...en.about,
+    title: "Sobre nosotros | Learning Tree Family Child Care en Turlock",
+    description: "Conoce a Janet Cervantes y el hogar detrás de Learning Tree Family Child Care en Turlock: cuidado infantil familiar con licencia donde los niños aprenden y juegan.",
     h1: "Nuestro entorno propicio",
     kicker: "Quiénes somos",
     p1: "En Learning Tree Family Child Care, ofrecemos un ambiente cálido y hogareño que fomenta el aprendizaje temprano y la atención personalizada. Nuestro equipo se centra en las necesidades únicas de cada niño, impulsando su crecimiento a través de actividades lúdicas y estimulantes en un entorno estructurado pero flexible, garantizando así un desarrollo integral.",
@@ -147,6 +169,9 @@ module.exports = {
 
   programs: {
     ...en.programs,
+    title: "Programas | Learning Tree Family Child Care en Turlock, CA",
+    description: "Programas para bebés, toddlers y preescolares en Learning Tree, Turlock: aprendizaje a través del juego, comidas saludables y cuidado de 7 am a 11 pm.",
+    enrollLink: "Cómo inscribirse",
     h1: "NUESTROS PROGRAMAS",
     img1: { ...en.programs.img1, alt: "Aventuras de aprendizaje diarias en Learning Tree" },
     img2: { ...en.programs.img2, alt: "En Learning Tree, los días están llenos de alegría." },
@@ -196,6 +221,7 @@ module.exports = {
   curriculum: {
     ...en.curriculum,
     title: "Currículo | Learning Tree Family Child Care",
+    description: "Un currículo basado en el juego que apoya cada área del desarrollo — lenguaje, motricidad, creatividad y convivencia — en Learning Tree, Turlock.",
     h1: "Áreas Curriculares Integrales",
     intro:
       "Nuestro currículo está diseñado para involucrar a los niños en múltiples áreas de aprendizaje, asegurando un desarrollo integral que los prepara para el éxito académico y las habilidades para la vida. Cada área curricular se integra cuidadosamente en las actividades diarias, brindando a los niños experiencias de aprendizaje enriquecedoras y significativas que potencian su curiosidad natural y su madurez para el desarrollo. Mediante la exploración práctica y el descubrimiento guiado, los niños desarrollan sólidas habilidades fundamentales a la vez que cultivan su amor por el aprendizaje.",
@@ -210,11 +236,30 @@ module.exports = {
   },
 
   // La galería y las páginas del portafolio siguen en inglés en Wix; solo las fotos de cada colección tienen texto alterno en español.
-  gallery: en.gallery,
-  portfolio: en.portfolio.map((p) => ({ ...p, items: withAlts(p.items, [...portfolioAlts[p.slug]]) })),
+  // Excepción de la barrida (nov 2026): el párrafo final de la galería va en español y sin Brightwheel,
+  // y los títulos de las colecciones se traducen.
+  gallery: {
+    ...en.gallery,
+    description: "Mira por dentro Learning Tree Family Child Care en Turlock: arte creativo, aventuras al aire libre, nuestras instalaciones y momentos memorables.",
+    appNote:
+      "A los padres les gusta mantenerse conectados. Con nuestra app para padres de Learning Tree, las familias reciben avisos, ven y firman documentos y llevan el registro de llegadas y salidas: todo en un solo lugar.",
+  },
+  portfolio: en.portfolio.map((p) => ({
+    ...p,
+    title: {
+      "creative-arts": "Artes creativas | Learning Tree Family Child Care",
+      "outdoor-adventures": "Aventuras al aire libre | Learning Tree Family Child Care",
+      "memorable-moments": "Momentos memorables | Learning Tree Family Child Care",
+      "our-facility": "Nuestras instalaciones | Learning Tree Family Child Care",
+      "fun-activities": "Actividades divertidas | Learning Tree Family Child Care",
+    }[p.slug],
+    items: withAlts(p.items, [...portfolioAlts[p.slug]]),
+  })),
 
   admissions: {
     ...en.admissions,
+    title: "Pasos de ingreso | Learning Tree Family Child Care Turlock, CA",
+    description: "Pasos de ingreso a Learning Tree Family Child Care en Turlock: cómo funciona la inscripción, qué esperar y cómo unirte a nuestra familia de cuidado infantil.",
     h1: "Cómo empezar",
     intro:
       "Elegir el centro de cuidado infantil adecuado para su hijo es una de las decisiones más importantes que tomará como padre o madre. Hemos diseñado nuestro proceso de admisión para que sea sencillo, transparente y acogedor, facilitando así que las familias se unan a la comunidad de Learning Tree. Le invitamos a visitar nuestras instalaciones, conocer a nuestro dedicado personal, observar nuestras aulas en funcionamiento y experimentar de primera mano el ambiente cálido y estimulante donde su hijo aprenderá y crecerá. Las plazas en nuestros programas se agotan rápidamente a lo largo del año, por lo que le recomendamos comenzar el proceso con anticipación para asegurar la fecha de inscripción que prefiera.",
@@ -231,12 +276,17 @@ module.exports = {
 
   enrollment: {
     ...en.enrollment,
+    title: "Inscripción | Learning Tree Family Child Care",
+    description: "Inscríbete en Learning Tree Family Child Care en Turlock en tres pasos. La cuota de inscripción es de $60 y se paga una vez en nuestro sistema seguro.",
+    appTitle: "¿Ya te inscribiste? Tu app para padres te espera",
+    appText: "Cuando tu hijo ya está inscrito, nuestra app para padres guarda todo en un solo lugar, en tu teléfono.",
+    appButton: "Abrir la app para padres",
     h1: "Bienvenido al siguiente paso.",
     introLines: [
       "Nos alegra mucho que se haya tomado el tiempo de visitar Learning Tree Family Child Care y conocer nuestro programa.",
       "Esperamos dar la bienvenida a su familia a nuestra comunidad.",
     ],
-    clickHere: "Haga clic aquí",
+    clickHere: "Ir al formulario de inscripción",
     howH2: "CÓMO INSCRIBIRSE",
     steps: [
       { title: "Paso 1: Haga clic en el botón de inscripción.", link: true, text: ["Haz clic en el botón \"Iniciar inscripción\" que aparece a continuación para abrir nuestro sistema seguro de inscripción y acceder al paquete de inscripción."] },
@@ -295,6 +345,8 @@ module.exports = {
 
   contact: {
     ...en.contact,
+    title: "Contacto | Learning Tree Family Child Care en Turlock, CA",
+    description: "Contacta a Learning Tree Family Child Care en Turlock, CA: (209) 499-2779, 2854 Delia Ct. Horario de lunes a viernes, 7:00 am–11:00 pm.",
     h1: "Ponte en contacto",
     kicker: "Estamos aquí para ti",
     intro: "No dudes en contactarnos si tienes alguna pregunta. Nuestro equipo está a tu disposición para brindarte la información y el apoyo que necesitas.",

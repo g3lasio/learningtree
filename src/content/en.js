@@ -23,6 +23,7 @@ module.exports = {
     languages: { en: "English", es: "Spanish" },
     floatingBookTour: "Book a Tour",
     startEnrollment: "Start Enrollment",
+    parentApp: "Parent App",
     skip: "Skip to Main Content",
     footer: {
       hours: "Daycare Hours: Monday – Friday 7:00 am - 11:00 pm",
@@ -45,7 +46,7 @@ module.exports = {
 
   home: {
     title: "Learning Tree Family Child Care | Licensed Daycare in Turlock, CA",
-    description: "", // TODO: copiar la meta descripción exacta desde Wix (SEO)
+    description: "Licensed family child care in Turlock, CA. Learning Tree offers nurturing care and early learning for infants, toddlers and preschoolers, Mon–Fri 7 am–11 pm.",
     h1: "Growing Kind Hearts and Bright Minds",
     tagline: "One Child at a Time",
     welcome: "Welcome to Learning Tree Family Child Care in Turlock, CA.",
@@ -68,20 +69,32 @@ module.exports = {
     instagramH2: "Follow Us on Instagram",
     instagramButton: "Follow @learningtreellc",
     instagram: [
-      "3ecd7299242644cabaf8208b7081f4d8",
-      "1270c7a953aa4a26a5145d4ac6e5c3d9",
-      "38796d3f6a154b479108d98d95501989",
-      "f80ad785953a432191570c7c10b5d597",
-      "0dad84f9f39b4938a82d434b129fc4c5",
-      "d2b5cfb34c8548a6931c4323f927f025",
-      "c1cb2b3e605a404c8534adf0570834d8",
-      "a8782cb5b2a94bd0bafe4ff7e659af91",
-    ].map((id) => img(id, "jpg", "")),
+      ["3ecd7299242644cabaf8208b7081f4d8", "Two children smiling while playing in a toy car"],
+      ["1270c7a953aa4a26a5145d4ac6e5c3d9", "Children looking up at a tree outdoors"],
+      ["38796d3f6a154b479108d98d95501989", "Outdoor play area"],
+      ["f80ad785953a432191570c7c10b5d597", "Green wall with dinosaur heads"],
+      ["0dad84f9f39b4938a82d434b129fc4c5", "Child wearing a \"Happy New Year\" paper hat"],
+      ["d2b5cfb34c8548a6931c4323f927f025", "Children sitting in a circle showing their colorful socks"],
+      ["c1cb2b3e605a404c8534adf0570834d8", "Children playing with pretend snow at an outdoor sensory table"],
+      ["a8782cb5b2a94bd0bafe4ff7e659af91", "Two children with cupcakes and party hats"],
+    ].map(([id, alt]) => img(id, "jpg", alt)),
+    // Bloque del app de padres (barrida nov 2026): solo funciones reales del app de familias.
+    appTitle: "The Learning Tree Parent App",
+    appIntro: "Our families have their own app. With your phone number you can:",
+    appPoints: [
+      "Check your child in and out",
+      "View and sign documents",
+      "Read the Parent Handbook and your enrollment packet",
+      "Receive announcements from Janet",
+      "See the status of your payments",
+    ],
+    appClose: "One place for everything — no extra accounts to create.",
+    appButton: "Go to the Parent App",
   },
 
   about: {
     title: "About Us | Our Nurturing Environment at Learning Tree Family Child Care",
-    description: "", // TODO: meta descripción desde Wix
+    description: "Meet Janet Cervantes and the nurturing home behind Learning Tree Family Child Care in Turlock — a licensed family child care where kids learn, play and grow.",
     h1: "Our Nurturing Environment",
     kicker: "Who We Are",
     p1: "At Learning Tree Family Child Care, we provide a warm, home-like environment that encourages early learning and personalized care. Our dedicated team focuses on each child's unique needs, fostering their growth through engaging play-based activities in a structured yet flexible setting, ensuring foundational development.",
@@ -110,7 +123,7 @@ module.exports = {
 
   programs: {
     title: "Programs at Learning Tree Family Child Care | Turlock, CA",
-    description: "",
+    description: "Infant, toddler and preschool programs at Learning Tree Family Child Care in Turlock, CA — play-based learning, healthy meals and care from 7 am to 11 pm.",
     h1: "OUR PROGRAMS",
     img1: img("6b31770ba8cb41acae813df3c12ce694", "jpg", "Learning adventures everyday at Learning Tree"),
     img2: img("c44d08ca281e44b3ad01b070b85e184e", "jpg", "Days are filled with joy at Learning Tree"),
@@ -139,6 +152,7 @@ module.exports = {
       },
     ],
     contactLink: "Contact Us",
+    enrollLink: "How to Enroll",
     testimonials: [
       {
         quote:
@@ -161,26 +175,29 @@ module.exports = {
 
   curriculum: {
     title: "Curriculum | Learning Tree Family Child Care",
-    description: "",
+    description: "A play-based curriculum that supports every area of development — language, motor skills, creativity and social growth — at Learning Tree in Turlock.",
     h1: "Comprehensive Curriculum Areas",
     intro:
       "Our curriculum is designed to engage children across multiple domains of learning, ensuring well-rounded development that prepares them for future academic success and life skills. Each curriculum area is carefully integrated into daily activities, providing children with rich, meaningful learning experiences that build upon their natural curiosity and developmental readiness. Through hands-on exploration and guided discovery, children develop strong foundational skills while maintaining their love of learning.",
     areas: [
       { title: "Practical Life", text: "Children develop self-help skills, learn to care for themselves and their environment, build social skills, and refine coordination through meaningful daily tasks and activities.", img: img("2e7c2670863c40e5aa82ebd156523767", "png", "Nature Exploration.png") },
       { title: "Sensorial and Cognitive", text: "Specialized activities refine observation skills, strengthen reasoning abilities, and build critical thinking through exploration of size, color, texture, and more.", img: img("c4f4b1032e2e4b61ab8ec42333b5f635", "jpg", "IMG_1910_jpg.jpg") },
-      { title: "Language", text: "We foster verbal and written communication, early literacy skills, and introduce a second language through conversation, storytelling, and engaging language materials.", img: img("5cb2df76291e465c8e00203cfa2fd92b", "jpg", "") },
-      { title: "Math", text: "Hands-on learning with counting, patterns, shapes, and problem-solving builds strong mathematical foundations and number sense in developmentally appropriate ways.", img: img("85dd4e7d5bc544e78d3ccd1f68e5da12", "jpg", "") },
-      { title: "Music", text: "Through singing, rhythm, instruments, and movement, children explore creativity, self-expression, cultural appreciation, and develop auditory discrimination skills", img: img("43101fc57b064512b9702325c93e1da7", "jpg", "") },
-      { title: "Science & Discovery", text: "Hands-on experiments, nature exploration, and early STEM activities nurture scientific thinking, curiosity about the world, and problem-solving skills.", img: img("c1cb2b3e605a404c8534adf0570834d8", "jpg", "IMG_1663_jpg.jpg") },
+      { title: "Language", text: "We foster verbal and written communication, early literacy skills, and introduce a second language through conversation, storytelling, and engaging language materials.", img: img("5cb2df76291e465c8e00203cfa2fd92b", "jpg", "Teacher and children sitting in a circle on mats in the classroom") },
+      { title: "Math", text: "Hands-on learning with counting, patterns, shapes, and problem-solving builds strong mathematical foundations and number sense in developmentally appropriate ways.", img: img("85dd4e7d5bc544e78d3ccd1f68e5da12", "jpg", "Girl counting and sorting colorful counting bears at a table") },
+      { title: "Music", text: "Through singing, rhythm, instruments, and movement, children explore creativity, self-expression, cultural appreciation, and develop auditory discrimination skills", img: img("43101fc57b064512b9702325c93e1da7", "jpg", "Children and their teacher playing with a colorful parachute") },
+      { title: "Science & Discovery", text: "Hands-on experiments, nature exploration, and early STEM activities nurture scientific thinking, curiosity about the world, and problem-solving skills.", img: img("c1cb2b3e605a404c8534adf0570834d8", "jpg", "Children exploring pretend snow at an outdoor sensory table") },
     ],
   },
 
   gallery: {
     title: "Gallery | Learning Tree Family Child Care",
-    description: "",
+    description: "Take a look inside Learning Tree Family Child Care in Turlock: creative arts, outdoor adventures, our facility and memorable moments from our days together.",
     h1: "A Typical Day at Learning Tree",
     intro:
-      "Each day at Learning Tree Family Child Care follows a thoughtful rhythm that balances structure with flexibility, active play with quiet time, and individual work with group activities. Our consistent daily schedule helps children feel secure while providing varied experiences that support all areas of development. Parents appreciate knowing what their child's day looks like and can observe through our Brightwheel app how their little one engages with different activities throughout the day.",
+      "Each day at Learning Tree Family Child Care follows a thoughtful rhythm that balances structure with flexibility, active play with quiet time, and individual work with group activities. Our consistent daily schedule helps children feel secure while providing varied experiences that support all areas of development.",
+    // Reemplazo veraz del párrafo de Brightwheel (barrida nov 2026): hoy las familias usan el app de padres de Learning Tree.
+    appNote:
+      "Parents appreciate staying connected. Through our Learning Tree parent app, families receive announcements, view and sign documents, and keep track of check-ins and check-outs — everything in one place.",
   },
 
   // Las 5 colecciones del portafolio, en el orden de Previous/Next del original.
@@ -188,6 +205,7 @@ module.exports = {
     {
       slug: "creative-arts",
       title: "Creative Arts at Learning Tree: Best Daycare in Turlock for Kids' Creativity",
+      description: "Encourage creativity and self-expression through our diverse arts and crafts activities, as children explore different art mediums at Learning Tree.",
       h1: "Creative Arts",
       text: "Encourage creativity and self-expression through our diverse arts and crafts activities. Children have the opportunity to explore different art mediums and unleash their imagination.",
       cover: img("318d702bae40491686bc1e3b5e9eb96d", "jpg", "Child making a rainbow with dot markers"),
@@ -205,6 +223,7 @@ module.exports = {
     {
       slug: "outdoor-adventures",
       title: "Outdoor Adventures at Learning Tree Family Child Care - Best Daycare in Turlock",
+      description: "Outdoor adventures at Learning Tree in Turlock: nature-based activities where children explore the natural world and connect with nature.",
       h1: "Outdoor Adventures",
       text: "Embark on exciting outdoor adventures with our nature-based activities. From exploring the natural world to learning about the environment, children have the opportunity to connect with nature.",
       cover: img("1270c7a953aa4a26a5145d4ac6e5c3d9", "jpg", "Children looking up at a tree outdoors."),
@@ -224,6 +243,7 @@ module.exports = {
     {
       slug: "memorable-moments",
       title: "Memorable Moments - Best Daycare in Turlock | Learning Tree Family Child Care",
+      description: "Memorable moments at Learning Tree Family Child Care in Turlock — celebrations, learning milestones and days filled with joy and growth.",
       h1: "Memorable Moments",
       text: "Capture the special memorable moments and memories created at our family child care center. From celebrations to learning milestones, every day is filled with joy and growth.",
       cover: img("63e7113bd79a4be1aff057d7743a6e66", "jpg", "Children lying on colorful blankets in a circle."),
@@ -242,6 +262,7 @@ module.exports = {
     {
       slug: "our-facility",
       title: "Our Facility | Best Daycare in Turlock - Learning Tree Family Child Care",
+      description: "Take a virtual tour of our family child care facility in Turlock — a safe, welcoming space where children learn, grow and have fun.",
       h1: "Our Facility",
       text: "Take a virtual tour of our family child care facility. Our safe and welcoming environment is designed to provide a nurturing space for children to learn, grow, and have fun.",
       cover: img("0a98a668bb0a44e7903191952c490a64", "jpg", "Colorful classroom with mats and educational materials."),
@@ -258,6 +279,7 @@ module.exports = {
     {
       slug: "fun-activities",
       title: "Fun Activities | Best Daycare in Turlock | Learning Tree Family Child Care",
+      description: "Fun activities at Learning Tree in Turlock: arts and crafts, outdoor adventures and something for every child to enjoy while learning and playing.",
       h1: "Fun Activities",
       text: "Explore the exciting and fun activities we offer for children to learn and play. From arts and crafts to outdoor adventures, there's something for every child to enjoy.",
       cover: img("a76a73efd6a644c8b5bc04b9be94c687", "jpg", "Two children smiling, playing with colorful building blocks."),
@@ -278,7 +300,7 @@ module.exports = {
 
   admissions: {
     title: "Admissions & Enrollment | Learning Tree Family Child Care Turlock, CA",
-    description: "",
+    description: "Getting started at Learning Tree Family Child Care in Turlock: how enrollment works, what to expect and the steps to join our child care family.",
     h1: "How to Get Started",
     intro:
       "Selecting the right childcare for your child is one of the most important decisions you'll make as a parent. We've designed our admissions process to be simple, transparent, and welcoming, making it easier for families to join the Learning Tree community. We encourage you to visit our facility, meet our dedicated staff, observe our classrooms in action, and experience firsthand the warm, nurturing environment where your child will learn and grow. Spaces in our programs fill quickly throughout the year, so we recommend starting the process early to secure your preferred enrollment date.",
@@ -296,14 +318,14 @@ module.exports = {
 
   enrollment: {
     title: "Enrollment | Learning Tree Family Child Care",
-    description: "",
+    description: "Enroll at Learning Tree Family Child Care in Turlock in three steps. The enrollment fee is $60, paid once in our secure enrollment system.",
     img: img("1270c7a953aa4a26a5145d4ac6e5c3d9", "jpg", "IMG_3302_jpg - Edited.jpg"),
     h1: "Welcome to the Next Step",
     introLines: [
       "We’re so happy you’ve taken the time to tour Learning Tree Family Child Care and get to know our program.",
       "We look forward to welcoming your family into our community.",
     ],
-    clickHere: "Click Here",
+    clickHere: "Go to the enrollment form",
     howH2: "HOW TO ENROLL",
     steps: [
       { title: "Step 1: Click the Enrollment Button", link: true, text: ["Click the Start Enrollment button below to open our secure enrollment system and access the enrollment package."] },
@@ -351,11 +373,15 @@ module.exports = {
     ],
     startNote: "All required forms, documents, and the $60 enrollment fee are completed in our secure enrollment system for a smooth and simple experience.",
     enrollButton: "Start Enrollment",
+    // Bloque del app de padres para familias ya inscritas (barrida nov 2026).
+    appTitle: "Already enrolled? Your parent app is waiting",
+    appText: "Once your child is enrolled, our parent app keeps everything in one place — right on your phone.",
+    appButton: "Open the Parent App",
   },
 
   contact: {
     title: "Contact Us - Learning Tree Family Child Care in Turlock, CA",
-    description: "",
+    description: "Contact Learning Tree Family Child Care in Turlock, CA: (209) 499-2779, 2854 Delia Ct. Daycare hours Monday–Friday, 7:00 am–11:00 pm.",
     h1: "Get in Touch",
     kicker: "We’re Here for You",
     intro: "Feel free to reach out with any inquiries. Our team is dedicated to providing you with the information and support you need.",

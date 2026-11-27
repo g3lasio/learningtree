@@ -48,6 +48,19 @@ for (const c of languages) {
   write(base + (c.lang === "en" ? "404.html" : "404.html"), t.notFound(c));
 }
 
+// Mapa del sitio (sitemap.xml): las 28 direcciones públicas, en la raíz del dominio (sin www).
+const pagePaths = ["", "about-us", "programs", "curriculum", "gallery", "admissions", "enrollment", "contact", "privacy-policy"];
+const sitemapUrls = [];
+for (const c of languages) {
+  const base = c.lang === "en" ? "" : "/" + c.lang;
+  for (const p of pagePaths) sitemapUrls.push(`https://edulearningtree.com${base}${p ? "/" + p : "/"}`);
+  for (const p of c.portfolio) sitemapUrls.push(`https://edulearningtree.com${base}/portfolio-collections/my-portfolio/${p.slug}`);
+}
+fs.writeFileSync(
+  path.join(OUT, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`
+);
+
 // Lista de fotos y videos que usa el sitio (para scripts/download-images.js).
 const manifest = {
   note: "Fotos de la biblioteca de Wix de Janet. Se descargan con: npm run images",

@@ -148,6 +148,15 @@ main { padding-top: var(--hh); }
 .h-ig img { width: 100%; height: 100%; object-fit: cover; }
 .btn-follow { display: flex; margin: 40px 0 0 calc(517 * var(--x)); }
 
+/* Bloque del app de padres en Inicio (barrida nov 2026) */
+.h-app { text-align: center; padding: 85px 20px 90px; }
+.h-app h2 { font-size: 57px; line-height: 68px; }
+.h-app-intro { margin-top: 26px; font-size: 17.5px; line-height: 27px; }
+.h-app-list { list-style: none; padding: 0; margin: 18px auto 0; display: inline-block; text-align: left; font-size: 17.5px; line-height: 30px; }
+.h-app-list li::before { content: "• "; }
+.h-app-close { margin-top: 22px; }
+.h-app .btn-fill { margin-top: 34px; width: auto; padding: 0 26px; }
+
 /* ---------- About Us ---------- */
 .a-hero { position: relative; padding: 40px calc(80 * var(--x)) 0 calc(39 * var(--x)); min-height: 533px; }
 .a-hero h1 { font-size: 70px; line-height: 84px; }
@@ -187,6 +196,7 @@ main { padding-top: var(--hh); }
 .p-img1 { position: absolute; left: calc(122 * var(--x)); top: 0; width: calc(706 * var(--x)); height: 445px; object-fit: cover; }
 .p-img2 { position: absolute; left: calc(722 * var(--x)); top: 228px; width: calc(286 * var(--x)); height: 386px; object-fit: cover; }
 .p-mid { text-align: center; padding-top: 132px; }
+.p-mid .btn-line { margin-top: 44px; width: auto; padding: 0 26px; }
 .p-intro { width: calc(650 * var(--xt)); margin: 0 auto; font-size: 15px; line-height: 29px; }
 .p-mid h2 { font-size: 60px; line-height: 72px; margin-top: 108px; }
 .p-stages { position: relative; isolation: isolate; margin-top: 33px; padding: 84px 0 32px; text-align: center; }
@@ -303,6 +313,12 @@ main { padding-top: var(--hh); }
 .en-start .btn-sq { margin-top: 40px; }
 .btn-wide { width: 239px; height: 42px; }
 
+/* Bloque del app de padres en Inscripción (barrida nov 2026) */
+.en-app { padding: 84px 20px 90px; text-align: center; }
+.en-app h2 { font-size: 57px; line-height: 68px; }
+.en-app p { width: 621px; max-width: 100%; margin: 26px auto 0; font-size: 15px; line-height: 24px; }
+.en-app .btn-sq { margin-top: 40px; }
+
 /* Ventana de vacunas */
 .modal { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 20px; }
 .modal[hidden] { display: none; }
@@ -347,6 +363,7 @@ main { padding-top: var(--hh); }
 .ct-band { background: var(--band); height: 172px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
 .ct-band h2 { font-size: 54px; line-height: 64px; }
 .ct-map iframe { display: block; width: 100%; height: 357px; border: 0; }
+.ct-address { text-align: center; padding: 26px 20px; font-size: 17.5px; }
 
 /* Páginas sencillas (gracias, 404) */
 .simple { text-align: center; padding: 120px 20px 140px; }
@@ -416,6 +433,13 @@ main { padding-top: var(--hh); }
   .h-card.text-first h3 { margin-top: 0; }
   .h-ig { grid-template-columns: repeat(2, 1fr); gap: calc(8 * var(--u)); margin: calc(24 * var(--u)) 0 0; }
   .btn-follow { width: calc(240 * var(--u)); margin: calc(26 * var(--u)) auto 0; }
+  .h-app { padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(50 * var(--u)); }
+  .h-app h2, .en-app h2 { font-size: calc(30 * var(--u)); line-height: calc(36 * var(--u)); }
+  .h-app-intro { margin-top: calc(16 * var(--u)); font-size: calc(16 * var(--u)); line-height: calc(25 * var(--u)); }
+  .h-app-list { font-size: calc(16 * var(--u)); line-height: calc(27 * var(--u)); }
+  .h-app .btn-fill { display: flex; margin: calc(26 * var(--u)) auto 0; width: calc(200 * var(--u)); height: calc(45 * var(--u)); font-size: calc(15 * var(--u)); padding: 0; }
+  .en-app { padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(50 * var(--u)); }
+  .p-mid .btn-line { margin-top: calc(26 * var(--u)); }
 
   .a-hero { padding: calc(30 * var(--u)) calc(20 * var(--u)); min-height: 0; display: flex; flex-direction: column; }
   .a-hero h1 { font-size: calc(32 * var(--u)); line-height: calc(38 * var(--u)); }

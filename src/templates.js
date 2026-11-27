@@ -115,6 +115,7 @@ ${description ? `<meta name="description" content="${esc(description)}">` : "<!-
       ${navLink("gallery", u.nav.gallery)}
       ${sub(u.nav.admissions, [["admissions", u.nav.gettingStarted], ["enrollment", u.nav.enrollment]])}
       ${navLink("contact", u.nav.contact)}
+      <li><a href="${site.PARENT_APP_URL}">${esc(u.parentApp)}</a></li>
     </ul>
   </nav>
   ${startEnroll}
@@ -125,6 +126,7 @@ ${description ? `<meta name="description" content="${esc(description)}">` : "<!-
   <nav aria-label="${c.lang === "es" ? "Menú móvil" : "Menu Mobile"}">
     <ul>
       ${mobileItems.map(([k, l]) => `<li><a href="${href(c.lang, k)}"${current === k ? ' aria-current="page"' : ""}>${esc(l)}</a></li>`).join("\n      ")}
+      <li><a href="${site.PARENT_APP_URL}">${esc(u.parentApp)}</a></li>
     </ul>
   </nav>
 </div>
@@ -152,14 +154,15 @@ __LEO_AI_EMBED__
 
 function footer(c) {
   const f = c.ui.footer;
-  // En la versión en español de Wix el pie solo muestra el copyright; si es.js no trae
-  // las otras líneas, no se muestran (igual que el original).
+  // Cada línea del pie se muestra solo si el idioma la trae en es.js/en.js.
+  // Desde la barrida de nov 2026 el pie en español trae las mismas líneas que el inglés.
   return `<footer class="site-footer">
   <div class="footer-text">
     ${f.hours ? `<h5>${esc(f.hours)}</h5>` : ""}
     ${f.contactPrefix ? `<p>${esc(f.contactPrefix).replace(site.phone, `<a class="tel" href="tel:+12094992779">${site.phone}</a>`)} <a href="mailto:${site.email}">${site.email}</a></p>` : ""}
     <p class="copy">${esc(f.copyright)}</p>
     ${f.licensePrefix ? `<p class="copy">${esc(f.licensePrefix)} <a href="${prefix(c.lang)}/privacy-policy">${esc(f.privacy)}</a></p>` : ""}
+    <p class="copy"><a href="${site.PARENT_APP_URL}">${esc(c.ui.parentApp)}</a></p>
   </div>
   <a class="footer-logo" href="${href(c.lang, "home")}"><img src="/img/a45c9f7ab14141b883ee04b0cd4ee1d6.png" alt="${esc(c.ui.logoAlt)}" width="105" height="105" loading="lazy"></a>
 </footer>`;
@@ -225,6 +228,16 @@ function home(c) {
     ${h.instagram.map((im) => `<a href="${site.instagramUrl}" target="_blank" rel="noopener">${image(im)}</a>`).join("\n    ")}
   </div>
   <a class="btn-follow" href="${site.instagramUrl}" target="_blank" rel="noopener">${esc(h.instagramButton)}</a>
+</section>
+
+<section class="h-app">
+  <h2>${esc(h.appTitle)}</h2>
+  <p class="h-app-intro">${esc(h.appIntro)}</p>
+  <ul class="h-app-list">
+    ${h.appPoints.map((x) => `<li>${esc(x)}</li>`).join("\n    ")}
+  </ul>
+  <p class="h-app-close">${esc(h.appClose)}</p>
+  <a class="btn-fill" href="${site.PARENT_APP_URL}">${esc(h.appButton)}</a>
 </section>`;
   return layout(c, { title: h.title, description: h.description, path: "/", body, current: "home" });
 }
@@ -280,6 +293,7 @@ function programs(c) {
 <section class="p-mid">
   <p class="p-intro">${esc(p.intro)}</p>
   <h2>${esc(p.stageH2)}</h2>
+  <a class="btn-line" href="${href(c.lang, "enrollment")}">${esc(p.enrollLink)}</a>
 </section>
 
 <section class="p-stages">
@@ -345,6 +359,7 @@ function gallery(c) {
 <section class="g-intro">
   <h1>${esc(g.h1)}</h1>
   <p>${esc(g.intro)}</p>
+  ${g.appNote ? `<p>${esc(g.appNote)}</p>` : ""}
 </section>
 <section class="g-tiles">
   ${c.portfolio
@@ -481,6 +496,11 @@ ${vaccinesModal(e.vaccines)}
   <h2>${esc(e.startH2)}</h2>
   <p>${e.startLines.map(esc).join("<br>")}<br>${esc(e.startNote)}</p>
   <a class="btn-sq btn-dark btn-wide" href="${esc(site.ENROLLMENT_URL)}">${esc(e.enrollButton)}</a>
+</section>
+<section class="en-app">
+  <h2>${esc(e.appTitle)}</h2>
+  <p>${esc(e.appText)}</p>
+  <a class="btn-sq btn-dark" href="${site.PARENT_APP_URL}">${esc(e.appButton)}</a>
 </section>`;
   return layout(c, { title: e.title, description: e.description, path: "/enrollment", body, current: "enrollment" });
 }
@@ -535,6 +555,7 @@ function contact(c) {
   <a class="btn-sq btn-dark" href="${site.bookTourUrl}">${esc(k.tourButton)}</a>
 </section>
 <section class="ct-map">
+  <p class="ct-address">Learning Tree Family Child Care · 2854 Delia Ct, Turlock, CA 95382</p>
   <iframe title="Google Maps: Learning Tree Child Care, 2854 Delia Ct, Turlock, CA 95382" src="${site.mapEmbedUrl}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
 </section>`;
   return layout(c, { title: k.title, description: k.description, path: "/contact", body, current: "contact" });
@@ -572,7 +593,7 @@ function privacyPolicy(c) {
   <p>${contact}</p>
   <p>Learning Tree Family Child Care · Turlock, CA · CA Lic. #${site.license}</p>
 </section>`;
-  return layout(c, { title: t.title, description: "", path: "/privacy-policy", body, current: "" });
+  return layout(c, { title: t.title, description: t.description || "", path: "/privacy-policy", body, current: "" });
 }
 
 module.exports = { home, about, programs, curriculum, gallery, portfolioPage, admissions, enrollment, contact, thanks, notFound, privacyPolicy };

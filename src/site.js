@@ -1,6 +1,6 @@
 // Datos que se repiten en todo el sitio. Si algo cambia (teléfono, enlaces), se cambia aquí una sola vez.
 module.exports = {
-  domain: "https://www.edulearningtree.com",
+  domain: "https://edulearningtree.com",
 
   // Enlaces externos, copiados tal cual del sitio de Wix (25 nov 2026).
   bookTourUrl: "https://koalendar.com/e/welcome-to-learning-tree",
@@ -15,6 +15,9 @@ module.exports = {
   // Botón "Start Enrollment": todos los botones de inscripción usan esta dirección.
   // Es la dirección permanente de inscripción en LeadPrime que dio Gelasio (26 nov 2026). El fee de $60 se paga ahí.
   ENROLLMENT_URL: "https://leadprime.chyrris.com/learning-tree-enrollment/learning-tree-family-childcare-llc",
+
+  // App de padres (LeadPrime): las familias ya inscritas entran con su número de teléfono.
+  PARENT_APP_URL: "https://app.edulearningtree.com",
 
   // Las fotos vienen de la biblioteca de Wix de Janet. Se guardan en public/img/<id>.<ext>.
   // Si una foto todavía no se descargó, el servidor la pide a Wix (ver server.js).

@@ -191,6 +191,12 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
 
+  // La ruta vieja de Wix de la política de privacidad manda a la buena (301).
+  if (pathname === "/privacy-policynew-page" || pathname === "/es/privacy-policynew-page") {
+    res.writeHead(301, { Location: (lang === "es" ? "/es" : "") + "/privacy-policy" });
+    return res.end();
+  }
+
   // Quita la diagonal final: /about-us/ -> /about-us (como Wix).
   if (pathname.length > 1 && pathname.endsWith("/")) {
     res.writeHead(301, { Location: pathname.slice(0, -1) + url.search });

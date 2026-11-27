@@ -7,6 +7,7 @@ const updated = { en: "Last updated: November 26, 2026", es: "Última actualizac
 
 const en = {
   title: "Privacy Policy | Learning Tree Family Child Care",
+  description: "Privacy Policy of Learning Tree Family Child Care in Turlock, CA — what information we collect through our website and how we use and protect it.",
   h1: "Privacy Policy",
   updated: updated.en,
   intro:
@@ -83,6 +84,7 @@ const en = {
 
 const es = {
   title: "Política de privacidad | Learning Tree Family Child Care",
+  description: "Política de privacidad de Learning Tree Family Child Care en Turlock, CA: qué información recopila nuestro sitio y cómo la usamos y protegemos.",
   h1: "Política de privacidad",
   updated: updated.es,
   intro:
